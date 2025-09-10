@@ -69,7 +69,7 @@ plt.savefig('keyword_analysis.png', dpi=300, bbox_inches='tight')
 plt.show()
 
 plt.figure(figsize=(8,6))
-sns.heatmap(correlations, annot=True, cmap='coolwarm', center=0)  # FIXED: correlations now defined
+sns.heatmap(correlations, annot=True, cmap='coolwarm', center=0) 
 plt.title("Correlation Matrix")
 plt.savefig('correlation_matrix.png', dpi=300, bbox_inches='tight')
 plt.show()
@@ -114,7 +114,7 @@ joblib.dump(model, 'book_rating_predictor.joblib')
 joblib.dump(le_genre, 'genre_encoder.joblib')
 print("Model saved as 'book_rating_predictor.joblib'")
 
-# DEFINE summary_text BEFORE using it in the try block
+
 summary_text = f"""
 I analyzed Amazon Bestsellers data (2009–2019). 
 Key correlations found:
@@ -130,7 +130,7 @@ Keyword trends show: {keyword_df.head(5).to_dict()}
 
 print("\nText to summarize:\n", summary_text)
 
-#AI summarization - add error handling
+#AI summarization 
 try:
     summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
     ai_summary = summarizer(summary_text, max_length=120, min_length=50, do_sample=False)[0]["summary_text"]
@@ -139,7 +139,7 @@ try:
 except Exception as e:
     print(f"\n⚠️  Summarization failed: {e}")
     print("Using fallback summary...")
-    ai_summary = summary_text[:200] + "..."  # Simple truncation fallback
+    ai_summary = summary_text[:200] + "..."  
     print("Fallback Summary:", ai_summary)
 
 # Export data
