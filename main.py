@@ -10,6 +10,8 @@ from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import LabelEncoder
 from sklearn.tree import DecisionTreeClassifier
 from sklearn.metrics import accuracy_score, classification_report
+from tqdm import tqdm 
+tqdm.pandas()
 
 # Load dataset
 df = pd.read_csv('bestsellers.csv')
