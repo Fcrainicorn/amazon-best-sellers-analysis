@@ -35,7 +35,7 @@ It combines **data cleaning, visualization, NLP keyword analysis, and predictive
 1. Clone the repository:
    
    ```bash
-   git clone https://github.com/yourusername/amazon-bestsellers-analysis.git
+   git clone https://github.com/Fcrainicorn/amazon-bestsellers-analysis.git
    
    cd amazon-bestsellers-analysis
    
