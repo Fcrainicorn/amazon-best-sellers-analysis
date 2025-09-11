@@ -1,86 +1,95 @@
 # 📚 Amazon Bestsellers Analysis (2009–2019)
 
-This project explores **550 books from Amazon's bestseller list (2009–2019)**, uncovering trends in ratings, reviews, prices, and genres.  
-It combines **data cleaning, visualization, NLP keyword analysis, and predictive modeling** to generate insights about what makes a book highly rated.
+This project analyzes **Amazon’s Top 50 Bestselling Books from 2009–2019**, uncovering insights about ratings, reviews, pricing, and keyword trends.  
+
+It combines **data cleaning, visualization, NLP keyword extraction, and predictive modeling** to explore what makes books successful — with an **AI-powered natural language summary** at the end.  
 
 
 
 ## ✨ Key Features
-- 🔍 **Data Cleaning & Exploration**  
-  - Removed duplicates, standardized column names, and transformed price data.  
-  - Produced descriptive statistics and dataset overview.  
+
+- 🧹 **Data Cleaning**  
+  - Removed duplicates, standardized columns, and converted price to numeric.  
+  - Added new features (decade buckets, encoded genres).  
 
 - 📝 **NLP Keyword Analysis**  
-  - Tokenized book titles and removed stopwords using NLTK.  
-  - Extracted the top 20 most common keywords and analyzed their impact on ratings & reviews.  
+  - Tokenized book titles using regex + NLTK stopwords.  
+  - Extracted the **Top 20 keywords** and analyzed their relationship with ratings & reviews.  
 
-- 📊 **Visualization**  
-  - Heatmaps for correlations between ratings, reviews, price, and publication year.  
-  - Bar charts of keyword popularity and trends over time.  
+- 📊 **Data Visualization**  
+  - Bar charts of average reviews by keyword.  
+  - Correlation heatmaps between ratings, reviews, prices, and publication year.  
 
 - ⏳ **Trends Over Time**  
-  - Price and rating averages by decade.  
-  - Ratings compared by genre (fiction vs. nonfiction).  
+  - Average **price and rating by decade**.  
+  - Genre-level comparisons of average ratings.  
 
 - 🤖 **Predictive Analytics**  
-  - Built a Decision Tree classifier to predict whether a book will be **highly rated (≥ 4.5)**.  
-  - Model saved as `book_rating_predictor.joblib`.  
+  - Built a **Decision Tree Classifier** to predict if a book is **highly rated (≥ 4.5)**.  
+  - Evaluated accuracy and classification metrics.  
 
 - 🧠 **AI-Generated Summary**  
-  - Used Hugging Face’s `bart-large-cnn` model to generate a natural language summary of insights.
- 
----
+  - Used Hugging Face’s `facebook/bart-large-cnn` model to produce a **natural language report** of findings.  
+
+- 📂 **Exported Results**  
+  - Saved analysis outputs as CSVs:  
+    - `keyword_analysis.csv`  
+    - `correlations.csv`  
+    - `top_keywords.csv`  
+    - `avg_price_by_decade.csv`  
+    - `avg_rating_by_decade.csv`  
+    - `avg_rating_by_genre.csv`  
+
+
 
 ## ▶️ How to Run
-1. Clone the repository:
-   
+
+1. Clone the repository:  
+
    ```bash
+   
    git clone https://github.com/Fcrainicorn/amazon-bestsellers-analysis.git
    
    cd amazon-bestsellers-analysis
-   
-2. Install dependencies:
+
+2. Install dependencies:  
 
    ```bash
-
    pip install -r requirements.txt
    ```
 3. Run the analysis:
-
+   
    ```bash
-
    python main.py
    ```
-## 📈 Example Insights
 
-Top Keywords: words like girl, life, love, and story are most common in bestseller titles.
 
-Correlation: number of reviews has a stronger relationship with ratings than price.
+## 📈 Example Insights  
 
-Trends: average book prices declined slightly after 2010, while ratings stayed consistently high.
+- **Top Keywords**: Words like *girl*, *life*, and *story* appear most often in bestselling titles.  
+- **Correlations**: Number of reviews is more strongly linked to rating than price.  
+- **Trends**: Average book prices declined after 2010, while ratings stayed high.  
+- **Predictive Model**: Achieved solid accuracy in classifying highly rated books.  
+- **AI Report**: Automatically summarizes correlations, keyword trends, and price/rating shifts over time.  
 
-Predictive Model: The model achieved strong baseline accuracy in predicting highly rated books.
 
-## 🛠 Tech Stack
 
-Python: pandas, seaborn, matplotlib, scikit-learn, joblib, tqdm 
 
-NLP: NLTK, Hugging Face Transformers
+## 🛠 Tech Stack  
 
-Machine Learning: Decision Tree Classifier
+- **Python Libraries**: pandas, matplotlib, seaborn, scikit-learn, joblib, tqdm  
+- **NLP**: NLTK, Hugging Face Transformers  
+- **Machine Learning**: Decision Tree Classifier  
+- **Deep Learning Backend**: PyTorch (via `transformers`)  
 
-Visualization: Seaborn, Matplotlib
 
-### 🔮 Next Steps
 
-Test additional models (Random Forest, XGBoost) for improved predictive accuracy.
 
-Build a lightweight dashboard with Streamlit for interactive exploration.
+## 📜 Dataset  
 
-Expand analysis to include newer Amazon bestseller datasets.
+Dataset sourced from Kaggle: [Amazon Top 50 Bestselling Books 2009–2019](https://www.kaggle.com/datasets/sootersaalu/amazon-top-50-bestselling-books-2009-2019?resource=download).  
 
-## 📜 Acknowledgements
-Dataset sourced from Kaggle: [Amazon Top 50 Bestselling Books 2009–2019](https://www.kaggle.com/datasets/sootersaalu/amazon-top-50-bestselling-books-2009-2019?resource=download).
+
 
 
 
